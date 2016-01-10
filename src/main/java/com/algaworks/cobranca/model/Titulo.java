@@ -21,7 +21,7 @@ public class Titulo {
 	private Date dataVencimento;
 	private BigDecimal valor;
 	@Enumerated(EnumType.STRING)
-	private StatusTitulo statusTitulo;
+	private StatusTitulo status;
 
 	public Long getCodigo() {
 		return codigo;
@@ -55,12 +55,12 @@ public class Titulo {
 		this.valor = valor;
 	}
 
-	public StatusTitulo getStatusTitulo() {
-		return statusTitulo;
+	public StatusTitulo getStatus() {
+		return status;
 	}
 
-	public void setStatusTitulo(StatusTitulo statusTitulo) {
-		this.statusTitulo = statusTitulo;
+	public void setStatus(StatusTitulo status) {
+		this.status = status;
 	}
 
 	@Override
