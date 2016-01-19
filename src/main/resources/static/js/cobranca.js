@@ -16,3 +16,7 @@ $('#confirmacaoExclusaoModal').on(
 					'Tem certeza que deseja excluir o título <strong>'
 							+ descricaoTitulo + ' </strong>?');
 		});
+
+$(function() {
+	$('[rel="tooltip"]').tooltip();
+});
