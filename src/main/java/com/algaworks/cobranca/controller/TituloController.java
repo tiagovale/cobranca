@@ -76,6 +76,8 @@ public class TituloController {
 		attributes.addFlashAttribute("mensagem", "Título excluído com sucesso!");
 		return "redirect:/titulos";
 	}
+	@RequestMapping(value="{codigo}/receber")
+	public void receber(){}
 
 	@ModelAttribute("todosStatusTitulo")
 	public List<StatusTitulo> todosStatusTitulo() {

@@ -42,6 +42,9 @@
 							 title="Excluir" rel="tooltip" data-placement="top">
 								<span class="glyphicon glyphicon-remove"> </span>
 							</a>
+							<a class="btn btn-link btn-xs js-atualizar-status" th:if="${titulo.pendente}" th:href="@{/titulos/{codigo}/receber(codigo=${titulo.codigo})}">
+							<span class="glyphicon glyphicon-check" title="Receber" rel="tooltip" data-placement="top"></span>
+							</a>
 						</td>
 					</tr>
 					<tr>
