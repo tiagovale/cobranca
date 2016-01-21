@@ -25,11 +25,36 @@ $(function() {
 		allowZero : true
 	});
 
-	$('.js-atualizar-status').on('click', function(event) {
-		event.preventDefault();
-		console.log('clicou');
-		var botaoReceber = $(event.currentTarget);
-		var urlReceber= botaoReceber.attr('href');
-		console.log('urlReceber',urlReceber);
-	});
+	$('.js-atualizar-status')
+			.on(
+					'click',
+					function(event) {
+						event.preventDefault();
+						console.log('clicou');
+						var botaoReceber = $(event.currentTarget);
+						var urlReceber = botaoReceber.attr('href');
+						console.log('urlReceber', urlReceber);
+
+						var reponse = $.ajax({
+							url : urlReceber,
+							type : 'PUT'
+
+						});
+
+						reponse
+								.done(function(e) {
+									var codigoTitulo = botaoReceber
+											.data('codigo');
+									$('[data-role=' + codigoTitulo + ']')
+											.html(
+													'<span class="label label-success">'+ e +' </span>');
+									botaoReceber.hide();
+								});
+						response.fail(function(e) {
+							console.log(e);
+							alert('Erro ao receber a cobrança');
+						});
+
+					});
+
 });
